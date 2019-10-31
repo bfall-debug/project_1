@@ -1,4 +1,6 @@
 function getLocation(){
+
+    
     location = {
         city: "Boston",
         country: "US",

@@ -1,3 +1,5 @@
+//======= loading webpages and event handlers ==========
+
 
 $(document).ready(function(){
     // for navbar 
@@ -6,3 +8,6 @@ $(document).ready(function(){
     $('select').formSelect();
   });
 
+
+
+  d
