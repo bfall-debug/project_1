@@ -1,4 +1,7 @@
 function concertElement(artist){
+    // clear the page content and keep the navbar
+    $(".main-container").empty();
+
     // ========= Construction =========
     var container = $("<div>");
     var image = $("<img>");
