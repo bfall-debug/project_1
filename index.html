@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+    <!-- NAVBAR -->
     <nav class="teal">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Logo</a>
@@ -30,14 +30,59 @@
     </nav>
 
     <ul class="sidenav" id="mobile-nav">
-         <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="favorites.html">Favorites</a></li>
     </ul>
 
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+    <div class="container center">
+        <h3>Music You'll Love</h3>
+    </div>
+
+    <div class="container center">
+        <form>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <label>Choose by Genre</label>
+        </div>
+        <div class="input-field col s12">
+            <input placeholder="Band/Artist Name" id="band_name" type="text" class="validate">
+            <label for="band_name"></label>
+        </div>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+            <label>Choose by City/State</label>
+        </div>
+        <div>
+            <p class="left">
+                <label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                    <span>Find shows using my location</span>
+                </label>
+            </p>
+        </div>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Find Shows
+                <i class="chevron_right"></i>
+              </button>
+        </form>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/javascript/script.js"></script>
