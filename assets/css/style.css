@@ -3,9 +3,17 @@ nav {
 }
 
 body {
-    background-image: url("../bandlights.jpg");
+    background-image: url("bandlights.jpg");
 }
 
 #bandlights {
     opacity: 0.75;
+}
+
+.input-field {
+    margin-bottom: 5%;
+}
+
+.btn {
+    margin-top: 5%;
 }
