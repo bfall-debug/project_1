@@ -10,3 +10,10 @@ function getLocation(){
     return location;
 
 }
+
+function relatedArtists (artist) {
+    
+    var artists = ["The Beatles", "Ariana Grande", "Blink 182", "Eminem"];
+
+    return artists;
+}
