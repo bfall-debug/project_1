@@ -1,6 +1,5 @@
 function getLocation(){
 
-    
     location = {
         city: "Boston",
         country: "US",
@@ -9,4 +8,5 @@ function getLocation(){
     }
 
     return location;
+
 }
