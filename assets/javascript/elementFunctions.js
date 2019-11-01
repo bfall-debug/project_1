@@ -3,25 +3,45 @@ function concertElement(artist){
     $(".main-container").empty();
 
     // ========= Construction =========
-    var container = $("<div>");
-    var image = $("<img>");
-    var bandLink = $("<div>");
-    var description = $("<div>");
+    // Create all elements of the the avatar content for the results page
+    var $resultsUl = $("<ul>");
+    $resultsUl.addClass("collection");
 
-    container.append(image,bandLink,description);
+    var $resultsLi = $("<li>");
+    $resultsLi.addClass("collection-item");
+    $resultsLi.addClass("avatar");
 
-    //=========== Data Fill =============
-    image.attr("src","image-link-here");
-    bandLink.text("https://www.bandInfo.com");
-    description.text("band is super cool");
 
-    //=========== Styling ================
-    info = getLocation();
-    image.addclass("image styling class");
-    bandLink.addclass("band link styling class");
-    description.addclass("description styling class");
+    var $resultsBandImage = $("<img>");
+    $resultsBandImage.addClass("circle");
+    $resultsBandImage.attr("src", "bandlights.jpg");
+
+    var $resultsSpan = $("<span>");
+    $resultsSpan.addClass("title");
+    $resultsSpan.text("Band Name");
+
+    var $dateP = $("<p>");
+    var $venueP = $("<p>");
+
+    var $resultsAnchor = $("<a>");
+    $resultsAnchor.addClass("secondary-content");
+    $resultsAnchor.attr("href", "#!");
+
+    var $starIcon = $("<i>");
+    $starIcon.addClass("material-icons");
+
+
+    $resultsUl.append($resultsLi);
+    $resultsLi.append($resultsBandImage);
+    $resultsLi.append($resultsSpan);
+    $resultsLi.append($dateP);
+    $resultsLi.append($venueP);
+    $resultsLi.append($resultsAnchor);
+    $resultsLi.append($starIcon);
+    $(".main-container").append($resultsUl);
+
 
     //========= Return Completed Element ============
-    return container;
+    return $resultsUl;
     
 }

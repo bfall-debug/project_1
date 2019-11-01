@@ -6,4 +6,10 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     // for option picker
     $('select').formSelect();
+
+    // RANDOM BTN TO TEST RESULTS PAGE
+    // $(".randomBtn").on("click", function(){
+    //   alert("clicked");
+    //   concertElement();
+    // });
   });
