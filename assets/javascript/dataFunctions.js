@@ -1,16 +1,6 @@
 function getLocation() {
 
-    var UserLocation = {
-        streetNum: "1",
-        street: "Main Street",
-        state: "New Hampshire",
-        country: "United States",
-        zipCode: "02101",
-        city: "Boston",
-        country: "US",
-        lon: 42.36,
-        lat: 71.06
-    }
+    
 
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -40,6 +30,17 @@ function getLocation() {
         });
     } else {
         alert("Browser doesn't support geolocation!");
+        var UserLocation = {
+            streetNum: "1",
+            street: "Main Street",
+            state: "New Hampshire",
+            country: "United States",
+            zipCode: "02101",
+            city: "Boston",
+            country: "US",
+            lon: 42.36,
+            lat: 71.06
+        }
     }
 
     return UserLocation;
