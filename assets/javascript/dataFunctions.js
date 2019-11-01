@@ -17,3 +17,16 @@ function relatedArtists (artist) {
 
     return artists;
 }
+
+function getConcert(){
+    
+
+    var concert = {
+         artist: "Taylor Swift",
+         time: 0,
+         venue: "Miami",
+         image: $("<img>")
+    }
+
+    return concert;
+}
