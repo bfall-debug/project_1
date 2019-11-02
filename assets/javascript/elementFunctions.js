@@ -1,4 +1,4 @@
-function concertElement(artist){
+function renderResults(artist){
     // clear the page content and keep the navbar
     $(".main-container").empty();
 
