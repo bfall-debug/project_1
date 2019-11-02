@@ -6,4 +6,9 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     // for option picker
     $('select').formSelect();
+
+    UserLocation = getLocation();
+    console.log(UserLocation)
   });
+
+  
