@@ -7,8 +7,8 @@ $(document).ready(function(){
     // for option picker
     $('select').formSelect();
 
-    UserLocation = getLocation();
-    console.log(UserLocation)
+  
+    
   });
 
   

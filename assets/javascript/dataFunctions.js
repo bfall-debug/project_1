@@ -1,5 +1,4 @@
-function getLocation() {
-
+//=========== Get UserLocation ==========
     var UserLocation = {
         streetNum: "1",
         street: "Main Street",
@@ -23,7 +22,6 @@ function getLocation() {
             $.ajax({
                 url: url,
                 method: "GET",
-                async: false
             }).then(function (a) {
 
                 UserLocation = {
@@ -36,15 +34,17 @@ function getLocation() {
                     lon: position.coords.longitude,
                     lat: position.coords.latitude
                 }
+
+               // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+
+
             })
         });
     } else {
         alert("Browser doesn't support geolocation!");
     }
 
-    return UserLocation;
-}
-
+    // =============== Get Related Artists ==============
 function relatedArtists(artist) {
 
     var artists = ["The Beatles", "Ariana Grande", "Blink 182", "Eminem"];
