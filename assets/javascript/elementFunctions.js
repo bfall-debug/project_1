@@ -1,3 +1,10 @@
+// create an object to save the info about each show
+var showInfo = {
+    bandName: "Band Name",
+    showDate: "Show Date",
+    venue: "Venue"
+}
+
 function renderResults(artist) {
     // clear the page content and keep the navbar
     $(".main-container").empty();
@@ -23,9 +30,9 @@ function renderResults(artist) {
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
 
-    var $bandName = $("<p>").text("Band Name");
-    var $dateP = $("<p>").text("Show Date");
-    var $venueP = $("<p>").text("Venue Info");
+    var $bandName = $("<p>").text(showInfo.bandName);
+    var $dateP = $("<p>").text(showInfo.showDate);
+    var $venueP = $("<p>").text(showInfo.venue);
 
     var $resultsAnchor = $("<a>");
     $resultsAnchor.addClass("secondary-content");
@@ -56,11 +63,13 @@ function renderResults(artist) {
 }
 
 
-
+// Click event for the star icon to save show info
 $(document).on("click", ".starIcon", function (event) {
-    alert("clicked");
     $(this).removeClass("icon-teal");
     $(this).addClass("icon-saved");
+
+    localStorage.setItem("showInfo", JSON.stringify(showInfo));
+
 });
 
 
