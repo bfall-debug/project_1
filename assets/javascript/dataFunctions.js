@@ -16,7 +16,7 @@ function getLocation() {
                 async: false
             }).then(function (a) {
 
-                var UserLocation = {
+                 UserLocation = {
                     streetNum: a.results[0].address_components[0].long_name,
                     street: a.results[0].address_components[1].long_name,
                     city: a.results[0].address_components[3].long_name,
@@ -26,9 +26,10 @@ function getLocation() {
                     lon: position.coords.longitude,
                     lat: position.coords.latitude
                 }
-
-                return UserLocation;
+                // console.log(UserLocation)
+                
             })
+            
         });
     } else {
         alert("Browser doesn't support geolocation!");
@@ -44,10 +45,9 @@ function getLocation() {
             lat: 71.06
         }
 
-        return UserLocation;
     }
 
-    
+    return UserLocation;
 }
 
 function relatedArtists(artist) {
