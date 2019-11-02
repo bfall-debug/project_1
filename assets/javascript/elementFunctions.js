@@ -5,9 +5,9 @@ var showInfo = {
     venue: "Venue"
 }
 
-function renderResults(artist) {
+function renderResults(event) {
     // clear the page content and keep the navbar
-    $(".main-container").empty();
+    // $(".main-container").empty();
 
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
@@ -30,9 +30,9 @@ function renderResults(artist) {
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
 
-    var $bandName = $("<p>").text(showInfo.bandName);
-    var $dateP = $("<p>").text(showInfo.showDate);
-    var $venueP = $("<p>").text(showInfo.venue);
+    var $bandName = $("<p>").text(event.name);
+    var $dateP = $("<p>").text(event.dates.start.localDate);
+    var $venueP = $("<p>").text(event._embedded.venues[0].name);
 
     var $resultsAnchor = $("<a>");
     $resultsAnchor.addClass("secondary-content");
@@ -46,7 +46,7 @@ function renderResults(artist) {
     $starIcon.addClass("icon-teal");
 
 
-    // append elements
+    // Append elements
     $resultsUl.append($newDivRow);
     $newDivRow.append($resultsLi);
     $resultsLi.append($resultsBandImage);

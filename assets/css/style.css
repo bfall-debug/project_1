@@ -4,7 +4,7 @@ nav {
 
 #bandlights {
     opacity: 0.75;
-} */
+} 
 
 .input-field {
     margin-bottom: 5%;
@@ -21,3 +21,9 @@ i.icon-teal {
 i.icon-saved {
     color: #FFD180;
 }
+.brand-logo {
+    width: 70px;
+    height: 70x;
+    margin-bottom: 10px;
+}
+
