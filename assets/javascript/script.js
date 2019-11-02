@@ -7,9 +7,5 @@ $(document).ready(function(){
     // for option picker
     $('select').formSelect();
 
-    // RANDOM BTN TO TEST RESULTS PAGE
-    $(".randomBtn").on("click", function(){
-      // alert("clicked");
-      renderResults();
-    });
+    
   });

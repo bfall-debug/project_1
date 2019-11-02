@@ -1,3 +1,6 @@
+// RANDOM BTN TO TEST RESULTS PAGE
+$(".randomBtn").on("click", function(){
+  
 //=========== Get UserLocation ==========
     var UserLocation = {
         streetNum: "1",
@@ -43,14 +46,7 @@
         alert("Browser doesn't support geolocation!");
     }
 
-    // =============== Get Related Artists ==============
-function relatedArtists(artist) {
-
-    var artists = ["The Beatles", "Ariana Grande", "Blink 182", "Eminem"];
-
-    return artists;
-}
-
+    
 //=========== Get Events ==========
   
     function ticketmasterAPI(geoHash){
@@ -81,7 +77,7 @@ function relatedArtists(artist) {
 
 
 
-
+});
 
 
 
