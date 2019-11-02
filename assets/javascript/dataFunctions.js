@@ -1,6 +1,15 @@
-function getLocation() {
-
-    
+//=========== Get UserLocation ==========
+    var UserLocation = {
+        streetNum: "1",
+        street: "Main Street",
+        state: "New Hampshire",
+        country: "United States",
+        zipCode: "02101",
+        city: "Boston",
+        country: "US",
+        lon: 42.36,
+        lat: 71.06
+    }
 
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -13,7 +22,6 @@ function getLocation() {
             $.ajax({
                 url: url,
                 method: "GET",
-                async: false
             }).then(function (a) {
 
                  UserLocation = {
@@ -26,8 +34,10 @@ function getLocation() {
                     lon: position.coords.longitude,
                     lat: position.coords.latitude
                 }
-                // console.log(UserLocation)
-                
+
+               // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+
+
             })
             
         });
@@ -47,25 +57,10 @@ function getLocation() {
 
     }
 
-    return UserLocation;
-}
-
+    // =============== Get Related Artists ==============
 function relatedArtists(artist) {
 
     var artists = ["The Beatles", "Ariana Grande", "Blink 182", "Eminem"];
 
     return artists;
-}
-
-function getConcert(){
-    
-
-    var concert = {
-         artist: "Taylor Swift",
-         time: 0,
-         venue: "Miami",
-         image: $("<img>")
-    }
-
-    return concert;
 }
