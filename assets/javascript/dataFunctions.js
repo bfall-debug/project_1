@@ -1,3 +1,5 @@
+// import Geohash from "./geoHash";
+
 //=========== Get UserLocation ==========
     var UserLocation = {
         streetNum: "1",
@@ -23,38 +25,25 @@
                 url: url,
                 method: "GET",
             }).then(function (a) {
-
+                // alert("test1")
                  UserLocation = {
                     streetNum: a.results[0].address_components[0].long_name,
                     street: a.results[0].address_components[1].long_name,
-                    city: a.results[0].address_components[3].long_name,
-                    state: a.results[0].address_components[5].long_name,
-                    country: a.results[0].address_components[6].long_name,
-                    zipCode: a.results[0].address_components[7].long_name,
+                    city: a.results[0].address_components[2].long_name,
+                    state: a.results[0].address_components[4].long_name,
+                    country: a.results[0].address_components[5].long_name,
+                    zipCode: a.results[0].address_components[6].long_name,
                     lon: position.coords.longitude,
-                    lat: position.coords.latitude
+                    lat: position.coords.latitude,
+                    geoHash: Geohash.encode(position.coords.latitude,position.coords.longitude,4)
                 }
-
-               // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
-
+                ticketmasterAPI(UserLocation.geoHash);
 
             })
             
         });
     } else {
         alert("Browser doesn't support geolocation!");
-        var UserLocation = {
-            streetNum: "1",
-            street: "Main Street",
-            state: "New Hampshire",
-            country: "United States",
-            zipCode: "02101",
-            city: "Boston",
-            country: "US",
-            lon: 42.36,
-            lat: 71.06
-        }
-
     }
 
     // =============== Get Related Artists ==============
@@ -64,3 +53,41 @@ function relatedArtists(artist) {
 
     return artists;
 }
+
+//=========== Get Events ==========
+  
+        // var lat = position.coords.latitude;
+        // var lon = position.coords.longitude;
+    function ticketmasterAPI(geoHash){
+        latlong = "40.36-70.67"
+        var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
+        var genre = "KnvZfZ7vAvv"
+        var radius = 100
+        // var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&geoHash=${geoHash}&radius=100`
+        var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&classificationId=${genre}&geoPoint=${geoHash}&radius=${radius}`
+        $.ajax({
+            url: url,
+            method: "GET",
+        }).then(function (a) {
+            
+           // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+            
+            var events = a._embedded.events;
+            console.log(events)
+            for(i = 0; i < events.length; i++){
+                // RACHAEL INSERT FUNCTION HERE
+                console.log(events[i])
+
+            }
+
+        });
+    }
+
+
+
+
+
+
+
+
+
