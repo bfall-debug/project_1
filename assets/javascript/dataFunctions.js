@@ -1,5 +1,3 @@
-// import Geohash from "./geoHash";
-
 //=========== Get UserLocation ==========
     var UserLocation = {
         streetNum: "1",
@@ -25,7 +23,6 @@
                 url: url,
                 method: "GET",
             }).then(function (a) {
-                // alert("test1")
                  UserLocation = {
                     streetNum: a.results[0].address_components[0].long_name,
                     street: a.results[0].address_components[1].long_name,
@@ -56,14 +53,11 @@ function relatedArtists(artist) {
 
 //=========== Get Events ==========
   
-        // var lat = position.coords.latitude;
-        // var lon = position.coords.longitude;
     function ticketmasterAPI(geoHash){
         latlong = "40.36-70.67"
         var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
         var genre = "KnvZfZ7vAvv"
         var radius = 100
-        // var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&geoHash=${geoHash}&radius=100`
         var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&classificationId=${genre}&geoPoint=${geoHash}&radius=${radius}`
         $.ajax({
             url: url,
