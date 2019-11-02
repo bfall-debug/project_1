@@ -24,7 +24,7 @@
                 method: "GET",
             }).then(function (a) {
 
-                UserLocation = {
+                 UserLocation = {
                     streetNum: a.results[0].address_components[0].long_name,
                     street: a.results[0].address_components[1].long_name,
                     city: a.results[0].address_components[3].long_name,
@@ -39,9 +39,22 @@
 
 
             })
+            
         });
     } else {
         alert("Browser doesn't support geolocation!");
+        var UserLocation = {
+            streetNum: "1",
+            street: "Main Street",
+            state: "New Hampshire",
+            country: "United States",
+            zipCode: "02101",
+            city: "Boston",
+            country: "US",
+            lon: 42.36,
+            lat: 71.06
+        }
+
     }
 
     // =============== Get Related Artists ==============
