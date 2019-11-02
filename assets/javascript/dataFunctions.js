@@ -74,8 +74,10 @@ function relatedArtists(artist) {
             
             var events = a._embedded.events;
             console.log(events)
+            $(".main-container").empty();
             for(i = 0; i < events.length; i++){
                 // RACHAEL INSERT FUNCTION HERE
+                renderResults(events[i]);
                 console.log(events[i])
 
             }
