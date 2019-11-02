@@ -4,38 +4,48 @@ function renderResults(artist){
 
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
+
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
 
+    var $newDivRow = $("<div>");
+    $newDivRow.addClass("row");
+
     var $resultsLi = $("<li>");
+    $resultsLi.addClass("valign-wrapper");
     $resultsLi.addClass("collection-item");
     $resultsLi.addClass("avatar");
-
 
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
     $resultsBandImage.attr("src", "bandlights.jpg");
 
-    var $resultsSpan = $("<span>");
-    $resultsSpan.addClass("title");
-    $resultsSpan.text("Band Name");
+    var $resultsDiv = $("<div>");
+    $resultsDiv.addClass("col s10");
 
-    var $dateP = $("<p>");
-    var $venueP = $("<p>");
+    var $bandName = $("<p>").text("Band Name");
+    var $dateP = $("<p>").text("Show Date");
+    var $venueP = $("<p>").text("Venue Info");
 
     var $resultsAnchor = $("<a>");
     $resultsAnchor.addClass("secondary-content");
     $resultsAnchor.attr("href", "#!");
 
-    var $starIcon = $("<i>");
+    var $starIcon = $("<i>grade</i>");
+    $starIcon.addClass("col s1");
     $starIcon.addClass("material-icons");
+    $starIcon.addClass("right");
 
 
-    $resultsUl.append($resultsLi);
+
+    // append elements
+    $resultsUl.append($newDivRow);
+    $newDivRow.append($resultsLi);
     $resultsLi.append($resultsBandImage);
-    $resultsLi.append($resultsSpan);
-    $resultsLi.append($dateP);
-    $resultsLi.append($venueP);
+    $resultsLi.append($resultsDiv);
+    $resultsDiv.append($bandName);
+    $resultsDiv.append($dateP);
+    $resultsDiv.append($venueP);
     $resultsLi.append($resultsAnchor);
     $resultsLi.append($starIcon);
     $(".main-container").append($resultsUl);

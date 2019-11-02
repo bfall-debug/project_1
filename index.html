@@ -14,26 +14,26 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#!" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+    </ul>
     <div class="container main-container">
-        <!-- NAVBAR -->
-        <nav class="teal">
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
-                <a href="#!" class="sidenav-trigger" data-target="mobile-nav">
-                    <i class="material-icons">menu</i>
-                </a>
-
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <ul class="sidenav" id="mobile-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="favorites.html">Favorites</a></li>
-        </ul>
 
         <div class="row">
             <div class="col s12 m7 center-align">
@@ -50,7 +50,7 @@
         <div class="container center">
             <form>
                 <div class="input-field col s12">
-                    <select>
+                    <select class="genre-dropdown">
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
@@ -59,11 +59,11 @@
                     <label>Choose by Genre</label>
                 </div>
                 <div class="input-field col s12">
-                    <input placeholder="Band/Artist Name" id="band_name" type="text" class="validate">
+                    <input placeholder="Band/Artist Name" id="band-name" type="text" class="validate">
                     <label for="band_name"></label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select class="location-dropdown">
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
@@ -84,7 +84,7 @@
                     <i class="chevron_right"></i>
                 </button>
             </form>
-            <button class="randomBtn">Please Work</button>
+            <button class="randomBtn">Render Results (dummy btn)</button>
 
         </div>
 
