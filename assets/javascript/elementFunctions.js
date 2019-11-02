@@ -1,4 +1,4 @@
-function renderResults(artist){
+function renderResults(artist) {
     // clear the page content and keep the navbar
     $(".main-container").empty();
 
@@ -32,10 +32,11 @@ function renderResults(artist){
     $resultsAnchor.attr("href", "#!");
 
     var $starIcon = $("<i>grade</i>");
+    $starIcon.addClass("starIcon");
     $starIcon.addClass("col s1");
     $starIcon.addClass("material-icons");
     $starIcon.addClass("right");
-
+    $starIcon.addClass("icon-teal");
 
 
     // append elements
@@ -50,8 +51,17 @@ function renderResults(artist){
     $resultsLi.append($starIcon);
     $(".main-container").append($resultsUl);
 
-
     //========= Return Completed Element ============
     return $resultsUl;
-    
 }
+
+
+
+$(document).on("click", ".starIcon", function (event) {
+    alert("clicked");
+    $(this).removeClass("icon-teal");
+    $(this).addClass("icon-saved");
+});
+
+
+

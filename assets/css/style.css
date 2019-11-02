@@ -13,3 +13,11 @@ nav {
 .btn {
     margin-top: 5%;
 }
+
+i.icon-teal {
+    color: #009688;
+}
+
+i.icon-saved {
+    color: #FFD180;
+}
