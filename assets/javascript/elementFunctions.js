@@ -65,11 +65,15 @@ function renderResults(artist) {
 
 // Click event for the star icon to save show info
 $(document).on("click", ".starIcon", function (event) {
+    if ($(this).hasClass("icon-teal")){
     $(this).removeClass("icon-teal");
     $(this).addClass("icon-saved");
-
     localStorage.setItem("showInfo", JSON.stringify(showInfo));
-
+    } else {
+        $(this).addClass("icon-teal");
+        $(this).removeClass("icon-saved");
+        localStorage.removeItem("showInfo");
+    }
 });
 
 
