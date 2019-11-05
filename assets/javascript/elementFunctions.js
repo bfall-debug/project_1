@@ -1,9 +1,12 @@
 // create an object to save the info about each show
 var showInfo = {
-    bandName: "Band Name",
-    showDate: "Show Date",
-    venue: "Venue"
+    bandName: "band name",
+    image: "image",
+    showDate: "show date",
+    venue: "venue",
+    tickets: "tickets"
 }
+
 
 function renderResults(event) {
     // clear the page content and keep the navbar
@@ -25,6 +28,7 @@ function renderResults(event) {
 
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
+    $resultsBandImage.addClass("cover");
     $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
@@ -59,6 +63,15 @@ function renderResults(event) {
     $resultsLi.append($starIcon);
     $(".main-container").append($resultsUl);
 
+
+    // set showInfo variables to be saved in local storage
+    bandName = event.name;
+    image = event.images[0].url;
+    showDate = event.dates.start.localDate;
+    venue = event._embedded.venues[0].name;
+    tickets = event.outlets[0].url;
+
+
     //========= Return Completed Element ============
     return $resultsUl;
 }
@@ -79,6 +92,10 @@ $(document).on("click", ".starIcon", function (event) {
 
 
 // ========= Create Favorites Page =========
+
+function renderFavorites(){
+
+}
 
 
 

@@ -32,3 +32,7 @@ i.icon-saved {
     cursor: pointer;
 }
 
+.cover {
+    object-fit: cover;
+}
+
