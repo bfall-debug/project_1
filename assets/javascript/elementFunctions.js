@@ -40,6 +40,7 @@ function renderResults(event) {
 
     var $starIcon = $("<i>grade</i>");
     $starIcon.addClass("starIcon");
+    $starIcon.addClass("pointer-hover");
     $starIcon.addClass("col s1");
     $starIcon.addClass("material-icons");
     $starIcon.addClass("right");
