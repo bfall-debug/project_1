@@ -25,7 +25,7 @@ function renderResults(event) {
 
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
-    $resultsBandImage.attr("src", "bandlights.jpg");
+    $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
@@ -76,6 +76,9 @@ $(document).on("click", ".starIcon", function (event) {
         localStorage.removeItem("showInfo");
     }
 });
+
+
+// ========= Create Favorites Page =========
 
 
 
