@@ -46,11 +46,12 @@ i.icon-saved {
     margin-top: 75px;
 }
 
-.favorites-image {
-    height: 500px;
-}
-
 body {
     font-family: 'Shadows Into Light', cursive;
+}
+
+.favorites-image {
+    object-fit: cover;
+    height: 210px;
 }
 
