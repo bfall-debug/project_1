@@ -10,23 +10,23 @@
         $favCardImgDiv.addClass("card-image");
 
         var $favCardImg = $("<img>");
-        $favCardImg.attr("src", "assets/images/bandlights.jpg");
-        // $favCardImg.addClass("cirlce");
+        $favCardImg.attr("src", "#");
 
-        var $favCardSpan = $("<span>show name</span>");
+        var $favCardSpan = $("<span>");
         $favCardSpan.addClass("card-title");
 
-        var $favCardContent = $("<div>content</div>");
+        var $favCardContent = $("<div>");
         $favCardContent.addClass("card-content");
 
         var $favCardAction = $("<div>");
         $favCardAction.addClass("card-action");
 
-        var $favCardLink = $("<a>tickets link</a>");
+        var $favCardLink = $("<a>");
         $favCardLink.attr("href", "#");
 
 
         //  ========== Append Favorites Card Elements ============
+        if (savedEvents.length > 0){
         $favDiv.append($favCard);
         $favCard.append($favCardImgDiv);
         $favCardImgDiv.append($favCardImg);
@@ -35,6 +35,8 @@
         $favCardContent.append($favCardAction);
         $favCardAction.append($favCardLink);
         $(".row-2").append($favDiv);
+        }
+        
     }
 
     renderFavorites();
