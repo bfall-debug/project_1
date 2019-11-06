@@ -25,7 +25,7 @@ function renderResults(event) {
 
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
-    $resultsBandImage.attr("src", "bandlights.jpg");
+    $resultsBandImage.attr("src", "assets/images/bandlights.jpg");
 
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");

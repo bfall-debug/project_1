@@ -7,5 +7,4 @@ $(document).ready(function(){
     // for option picker
     $('select').formSelect();
 
-    
   });
