@@ -65,6 +65,10 @@ var savedEvents = [];
 $(document).on("click", ".starIcon", function (event) {
     event.preventDefault();
     var eventId = $(this).attr("data-id");
+    ticketmasterEvent(eventId);
+
+
+
 
 
     if ($(this).hasClass("icon-teal")){
@@ -78,7 +82,7 @@ $(document).on("click", ".starIcon", function (event) {
         savedEvents.push(savedEvent);
         localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
 
-        console.log(savedEvents);
+        // console.log(savedEvents);
 
     } else {
         $(this).addClass("icon-teal");
@@ -88,16 +92,38 @@ $(document).on("click", ".starIcon", function (event) {
         if(index > -1) {
             savedEvents.splice(index, 1)
         }
-        console.log("index", index);
-        console.log("savedEvent", eventId);
-        console.log(savedEvents);
+        // console.log("index", index);
+        // console.log("savedEvent", eventId);
+        // console.log(savedEvents);
         localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
     }
 });
 
 
 
+function ticketmasterEvent(Id) {
+    var eventId = `&Id=${Id}`
+    var url = TmQuery + `${eventId}`
 
+    $.ajax({
+        url: url,
+        method: "GET",
+    }).then(function (a) {
+        a = a._embedded.events[0];
+        eventInfo = {
+            name: a.name,
+            image: a.images[0].url,
+            ticket: a.url,
+            venue: a._embedded.venues[0].name,
+            date: a.dates.start.localDate,
+            id: Id
+        }
+        // code or function to add response to page
+        // renderFavorites(eventInfo);
+
+        console.log(eventInfo)
+    });
+}
 
 
 

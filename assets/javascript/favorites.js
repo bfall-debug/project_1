@@ -1,34 +1,12 @@
 var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
 console.log(savedEvents)
-alert($.isArray(savedEvents))
-// ["rZ7HnEZ1AaqdfA", "Z7r9jZ1Aerf-7"];
-
-savedEvents.forEach(function(savedEvent){
-    ticketmasterEvent(savedEvent);
-});
 
 
-function ticketmasterEvent(Id) {
-    var eventId = `&Id=${Id}`
-    var url = TmQuery + `${eventId}`
 
-    $.ajax({
-        url: url,
-        method: "GET",
-    }).then(function (a) {
-        a = a._embedded.events[0];
-        console.log(a)
-        eventInfo = {
-            name: a.name,
-            image: a.images[0].url,
-            ticket: a.url,
-            venue: a._embedded.venues[0].name,
-            date: a.dates.start.localDate
-        }
-        // code or function to add response to page
-        renderFavorites(eventInfo);
-    });
-}
+
+
+
+
 
 
 function renderFavorites(event) {
@@ -43,7 +21,7 @@ function renderFavorites(event) {
     $favCardImgDiv.addClass("card-image");
 
     var $favCardImg = $("<img>");
-    $favCardImg.attr("src", "#");
+    $favCardImg.attr("src", event.image);
 
     var $favCardSpan = $("<span>");
     $favCardSpan.addClass("card-title");
