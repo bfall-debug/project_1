@@ -84,9 +84,10 @@ $(document).on("click", ".starIcon", function (event) {
         savedEvents.pop(savedEvent);
         console.log(savedEvents);
         localStorage.setItem("favoritesArray", savedEvents);
-
     }
 });
+
+
 
 
 
