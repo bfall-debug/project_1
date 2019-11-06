@@ -4,30 +4,35 @@ var TmQuery = `https://app.ticketmaster.com/discovery/v2/events.json?${TmApiKey}
 
 $("#submitBtn").on("click", function(event){
   event.preventDefault();
-    navigator.geolocation.getCurrentPosition(function (position) {
-        geoHash = Geohash.encode(position.coords.latitude,position.coords.longitude,4)
-        ticketmasterAPI(geoHash);
-    });
-});
+navigator.geolocation.getCurrentPosition(function (position) {
+    geoHash = Geohash.encode(position.coords.latitude,position.coords.longitude,4)
 
-function ticketmasterAPI(geoHashCoords){
-    latlong = "40.36-70.67";
-    var geoHash = `&geoPoint=${geoHashCoords}`
+    var geoHash = `&geoPoint=${geoHash}`
     var radius = `&radius=${100}`
     var genre = `&classificationId=${getGenre()}`
     var type = "&classificationName=music";
-    
     var url = TmQuery + `${genre}${geoHash}${radius}${type}`
+    ticketmasterAPI(url);
+
+
+    
+    });
+    
+});
+
+function ticketmasterAPI(url){
     $.ajax({
         url: url,
         method: "GET",
     }).then(function (a) {
-       var events = a._embedded.events;
-       localStorage.setItem("allEvents", JSON.stringify(events));
-       $(".main-container").empty();
-       for(var i = 0; i < events.length; i++){
-           renderResults(events[i],i);
-       }
+        var events = a._embedded.events
+
+        localStorage.setItem("allEvents", JSON.stringify(events));
+        $(".main-container").empty();
+        for(var i = 0; i < events.length; i++){
+            renderResults(events[i],i);
+        }
+
     });
 }
 
@@ -42,7 +47,17 @@ function getGenre(){
     return genreId
 }
 
+//======= API call for rachael for favorites event ======
+var url = TmQuery + `&Id=rZ7HnEZ1AaqdfA`
+ticketmasterEvent(url);
 
-
-
-
+function ticketmasterEvent(url){
+    $.ajax({
+        url: url,
+        method: "GET",
+    }).then(function (a) {
+        
+        console.log(a)
+    });
+}
+//====================================================
