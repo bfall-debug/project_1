@@ -2,9 +2,12 @@ var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
 console.log("saved events: ", savedEvents)
 
 
+// loop through the saved object to populate the cards
+var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"));
 
-
-
+for (var k = 0; k < objectOfEvents.length; k++){
+    renderFavorites(objectOfEvents[k]);
+}
 
 
 
@@ -56,7 +59,6 @@ function renderFavorites(event) {
         $favCardAction.append($favCardLink);
         $(".row-2").append($favDiv);
     // }
-    
     
 }
 
