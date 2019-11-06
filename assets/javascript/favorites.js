@@ -1,5 +1,5 @@
 var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-console.log(savedEvents)
+console.log("saved events: ", savedEvents)
 
 
 
