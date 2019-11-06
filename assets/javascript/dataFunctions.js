@@ -62,16 +62,15 @@ function ticketmasterAPI(geoHash){
         
        // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
         
-        var events = a._embedded.events;
-        console.log(events)
-        $(".main-container").empty();
-        for(i = 0; i < events.length; i++){
-            // RACHAEL INSERT FUNCTION HERE
-            console.log(events[i])
-            renderResults(events[i]);
-            
-
-        }
+       var events = a._embedded.events;
+       console.log(events)
+       localStorage.setItem("allEvents", JSON.stringify(events));
+       $(".main-container").empty();
+       for(var i = 0; i < events.length; i++){
+           // RACHAEL INSERT FUNCTION HERE
+           renderResults(events[i],i);
+           console.log(events[i])
+       }
 
     });
 }
@@ -93,6 +92,9 @@ function ticketmasterAPI(geoHash){
             
     //        // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
             
+            
+
+
     //         var events = a._embedded.events;
     //         console.log(events)
     //         $(".main-container").empty();
