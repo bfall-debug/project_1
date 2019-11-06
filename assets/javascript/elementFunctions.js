@@ -16,8 +16,9 @@ function renderResults(event, index) {
     $resultsLi.addClass("avatar");
 
     var $resultsBandImage = $("<img>");
-    $resultsBandImage.addClass("circle");
+    // $resultsBandImage.addClass("circle");
     $resultsBandImage.addClass("cover");
+    $resultsBandImage.addClass("eventImage")
     $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
