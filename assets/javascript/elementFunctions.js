@@ -1,8 +1,5 @@
 
 function renderResults(event, index) {
-    // clear the page content and keep the navbar
-    // $(".main-container").empty();
-
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
 
@@ -21,7 +18,6 @@ function renderResults(event, index) {
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
     $resultsBandImage.addClass("cover");
-    // need to add this in the ajax call .then?
     $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
