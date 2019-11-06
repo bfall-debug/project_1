@@ -1,8 +1,5 @@
 
 function renderResults(event, index) {
-    // clear the page content and keep the navbar
-    // $(".main-container").empty();
-
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
 
@@ -19,9 +16,9 @@ function renderResults(event, index) {
     $resultsLi.addClass("avatar");
 
     var $resultsBandImage = $("<img>");
-    $resultsBandImage.addClass("circle");
+    // $resultsBandImage.addClass("circle");
     $resultsBandImage.addClass("cover");
-    // need to add this in the ajax call .then?
+    $resultsBandImage.addClass("eventImage")
     $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
@@ -57,15 +54,6 @@ function renderResults(event, index) {
     $resultsLi.append($starIcon);
     $(".main-container").append($resultsUl);
 
-
-    // set showInfo variables to be saved in local storage
-    showInfo = {
-    bandName: event.name,
-    image: event.images[0].url,
-    showDate: event.dates.start.localDate,
-    venue: event._embedded.venues[0].name,
-    tickets: event.outlets[0].url,
-    }
     //========= Return Completed Element ============
     return $resultsUl;
 }
