@@ -6,8 +6,6 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     // for option picker
     $('select').formSelect();
+
+    
   });
-
-
-
-  d

@@ -17,11 +17,11 @@
     <!-- NAVBAR -->
     <nav class="teal">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
+            <img src="assets/images/Project1Logo.png" class="brand-logo"></img>
             <a href="#!" class="sidenav-trigger" data-target="mobile-nav">
                 <i class="material-icons">menu</i>
             </a>
-
+            <!-- <h2>SocialNite</h2> -->
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="favorites.html">Favorites</a></li>
@@ -33,56 +33,59 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="favorites.html">Favorites</a></li>
     </ul>
+    <div class="container main-container">
 
     <div class="row">
             <div class="col s12 m12 center-align">
               <div class="card">
                 <div class="card-image">
                   <img src="bandlights.jpg">
-                  <span class="col s12 m12 card-title" style="top:50%;font-size:50px; ">Music You'll Love</span>
+                  <span class="col s12 m12 card-title" style="top:50%;font-size:50px; "><strong> Live Music You'll Love</strong></span>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
 
 
-    <div class="container center">
-        <form>
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Select an option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Choose by Genre</label>
+        <div class="container center">
+            <form>
+                <div class="input-field col s12">
+                    <select class="genre-dropdown">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Choose by Genre</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="Band/Artist Name" id="band-name" type="text" class="validate">
+                    <label for="band_name"></label>
+                </div>
+                <div class="input-field col s12">
+                    <select class="location-dropdown">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Choose by City/State</label>
+                </div>
+                <div>
+                    <p class="left">
+                        <label>
+                            <input type="checkbox" class="filled-in location-check" checked="checked" />
+                            <span>Find shows using my location</span>
+                        </label>
+                    </p>
+                </div>
+                <br>
+                <button class="btn waves-effect waves-light left" type="submit" name="action">Find Shows
+                    <i class="chevron_right"></i>
+                </button>
+            </form>
+            <button class="randomBtn">Render Results (dummy btn)</button>
+
         </div>
-        <div class="input-field col s12">
-            <input placeholder="Band/Artist Name" id="band_name" type="text" class="validate">
-            <label for="band_name"></label>
-        </div>
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Select an option</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Choose by City/State</label>
-        </div>
-        <div>
-            <p class="left">
-                <label>
-                    <input type="checkbox" class="filled-in location-check" checked="checked" />
-                    <span>Find shows using my location</span>
-                </label>
-            </p>
-        </div>
-        <br>
-        <button class="btn waves-effect waves-light left" type="submit" name="action">Find Shows
-                <i class="chevron_right"></i>
-              </button>
-        </form>
 
     </div>
 
@@ -93,7 +96,13 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script src="assets/javascript/geoHash.js"></script>
+    <script src="assets/javascript/dataFunctions.js"></script>
+    <script src="assets/javascript/elementFunctions.js"></script>
+    <script src="assets/javascript/webpageFunctions.js"></script>
     <script src="assets/javascript/script.js"></script>
+
 
 </body>
 
