@@ -43,6 +43,10 @@ function renderResults(event, index) {
     $starIcon.attr("data-id", event.id)
 
     var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    if (savedEvents === null){
+        savedEvents = [];
+    }
+
     var index = savedEvents.indexOf(event.id);
         if(index > -1){
             $starIcon.addClass("icon-saved");
@@ -77,9 +81,14 @@ $(document).on("click", ".starIcon", function (event) {
 
     
     var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"))
     var eventId = $(this).attr("data-id");
 
-    ticketmasterEvent(eventId);
+    if (objectOfEvents === null){
+        objectOfEvents = [];
+        savedEvents = [];
+    }
+
 
     if ($(this).hasClass("icon-teal")){
 
@@ -87,6 +96,8 @@ $(document).on("click", ".starIcon", function (event) {
         $(this).addClass("icon-saved");
         
         savedEvents.push(eventId);
+        ticketmasterEvent(eventId);
+
     } 
     else {
         $(this).addClass("icon-teal");
@@ -95,11 +106,14 @@ $(document).on("click", ".starIcon", function (event) {
         var index = savedEvents.indexOf(eventId);
         if(index > -1) {
             savedEvents.splice(index, 1)
+            objectOfEvents.splice(index, 1)
         }
 
     }
 
     localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
+    localStorage.setItem("objectOfEvents", JSON.stringify(objectOfEvents));
+
 });
 
 
@@ -107,9 +121,10 @@ $(document).on("click", ".starIcon", function (event) {
 function ticketmasterEvent(Id) {
     var eventId = `&Id=${Id}`
     var url = TmQuery + `${eventId}`
-    var ObjectOfEvents = JSON.parse(localStorage.getItem("ObjectOfEvents"))
-    if(ObjectOfEvents == null){
-        ObjectOfEvents = [];
+    var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"))
+
+    if(objectOfEvents == null){
+        objectOfEvents = [];
     }
 
     $.ajax({
@@ -125,8 +140,8 @@ function ticketmasterEvent(Id) {
             date: a.dates.start.localDate,
             id: Id
         }
-        ObjectOfEvents.push(eventInfo);
-        localStorage.setItem("ObjectOfEvents",JSON.stringify(ObjectOfEvents))
+        objectOfEvents.push(eventInfo);
+        localStorage.setItem("objectOfEvents",JSON.stringify(objectOfEvents))
 
         console.log(eventInfo)
     });
