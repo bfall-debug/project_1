@@ -57,15 +57,6 @@ function renderResults(event, index) {
     $resultsLi.append($starIcon);
     $(".main-container").append($resultsUl);
 
-
-    // set showInfo variables to be saved in local storage
-    showInfo = {
-    bandName: event.name,
-    image: event.images[0].url,
-    showDate: event.dates.start.localDate,
-    venue: event._embedded.venues[0].name,
-    tickets: event.outlets[0].url,
-    }
     //========= Return Completed Element ============
     return $resultsUl;
 }
