@@ -68,12 +68,14 @@ function relatedArtists(artist) {
             
             var events = a._embedded.events;
             console.log(events)
+            localStorage.setItem("allEvents", JSON.stringify(events));
             $(".main-container").empty();
-            for(i = 0; i < events.length; i++){
+            for(var i = 0; i < events.length; i++){
                 // RACHAEL INSERT FUNCTION HERE
-                renderResults(events[i]);
+                renderResults(events[i],i);
                 console.log(events[i])
 
+        
             }
 
         });

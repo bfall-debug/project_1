@@ -9,7 +9,6 @@ $(document).ready(function(){
 
     // RANDOM BTN TO TEST RESULTS PAGE
     $(".randomBtn").on("click", function(){
-      // alert("clicked");
       renderResults();
     });
   });
