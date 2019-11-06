@@ -1,5 +1,6 @@
 nav {
     padding-left: 10px;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 #bandlights {
@@ -48,3 +49,16 @@ i.icon-saved {
 /* .eventRow{
 
 } */
+.left {
+    margin-top: 75px;
+}
+
+body {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.favorites-image {
+    object-fit: cover;
+    height: 210px;
+}
+
