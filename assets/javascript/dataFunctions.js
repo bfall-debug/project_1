@@ -1,4 +1,5 @@
-var TmApiKey = "apikey=c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
+var apiKeys = ["apikey=c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK","apikey=r9XUBqAXvebp3AcDRZckLlwSKgLAe4sd"]
+var TmApiKey = apiKeys[1];
 var TmQuery = `https://app.ticketmaster.com/discovery/v2/events.json?${TmApiKey}`;
 
 
@@ -12,10 +13,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     var genre = `&classificationId=${getGenre()}`
     var type = "&classificationName=music";
     var url = TmQuery + `${genre}${geoHash}${radius}${type}`
-    ticketmasterAPI(url);
-
-
-    
+    ticketmasterAPI(url);    
     });
     
 });
