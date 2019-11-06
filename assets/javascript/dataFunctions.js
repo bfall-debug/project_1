@@ -1,6 +1,6 @@
 var apiKeys = ["apikey=c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK","apikey=r9XUBqAXvebp3AcDRZckLlwSKgLAe4sd"]
 var TmApiKey = apiKeys[1];
-var TmQuery = `https://app.ticketmaster.com/discovery/v2/events.json?${TmApiKey}`;
+var TmQuery = `https://app.ticketmaster.com/discovery/v2/events.json?${TmApiKey}&size=5`;
 
 
 $("#submitBtn").on("click", function(event){
@@ -46,16 +46,5 @@ function getGenre(){
 }
 
 //======= API call for rachael for favorites event ======
-var url = TmQuery + `&Id=rZ7HnEZ1AaqdfA`
-ticketmasterEvent(url);
 
-function ticketmasterEvent(url){
-    $.ajax({
-        url: url,
-        method: "GET",
-    }).then(function (a) {
-        
-        console.log(a)
-    });
-}
 //====================================================

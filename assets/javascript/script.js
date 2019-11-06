@@ -6,7 +6,6 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     // for option picker
     $('select').formSelect();
-
   });
 
   var sel = $('.genre-dropdown');
