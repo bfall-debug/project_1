@@ -64,26 +64,34 @@ var savedEvents = [];
 // Click event for the star icon to save show info
 $(document).on("click", ".starIcon", function (event) {
     event.preventDefault();
-    if ($(this).hasClass("icon-teal")){
-    $(this).removeClass("icon-teal");
-    $(this).addClass("icon-saved");
-    
     var eventId = $(this).attr("data-id");
-    localStorage.setItem("data-id", eventId);
 
-    var savedEvent = localStorage.getItem("data-id");
-    savedEvents.push(savedEvent);
-    localStorage.setItem("favoritesArray", savedEvents);
 
-    console.log(savedEvents);
+    if ($(this).hasClass("icon-teal")){
+        $(this).removeClass("icon-teal");
+        $(this).addClass("icon-saved");
+        
+        
+        localStorage.setItem("data-id", eventId);
+
+        var savedEvent = localStorage.getItem("data-id");
+        savedEvents.push(savedEvent);
+        localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
+
+        console.log(savedEvents);
 
     } else {
         $(this).addClass("icon-teal");
         $(this).removeClass("icon-saved");
         // localStorage.removeItem("data-id");
-        savedEvents.pop(savedEvent);
+        var index = savedEvents.indexOf(eventId);
+        if(index > -1) {
+            savedEvents.splice(index, 1)
+        }
+        console.log("index", index);
+        console.log("savedEvent", eventId);
         console.log(savedEvents);
-        localStorage.setItem("favoritesArray", savedEvents);
+        localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
     }
 });
 
