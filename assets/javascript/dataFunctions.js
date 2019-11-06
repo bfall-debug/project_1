@@ -1,5 +1,5 @@
 // RANDOM BTN TO TEST RESULTS PAGE
-$(".randomBtn").on("click", function(){
+$("#submitBtn").on("click", function(){
   
 //=========== Get UserLocation ==========
     var UserLocation = {
@@ -46,7 +46,7 @@ $(".randomBtn").on("click", function(){
         alert("Browser doesn't support geolocation!");
     }
 
-    
+
 //=========== Get Events ==========
   
     function ticketmasterAPI(geoHash){
@@ -75,6 +75,32 @@ $(".randomBtn").on("click", function(){
         });
     }
 
+
+    // function ticketmasterAPI(geoHash){
+    //     latlong = "40.36-70.67"
+    //     var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
+    //     var genre = "KnvZfZ7vAvv"
+    //     var radius = 100
+    //     var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&id=Z7r9jZ1Aeqf7x`
+    //     $.ajax({
+    //         url: url,
+    //         method: "GET",
+    //     }).then(function (a) {
+            
+    //        // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+            
+    //         var events = a._embedded.events;
+    //         console.log(events)
+    //         $(".main-container").empty();
+    //         for(i = 0; i < events.length; i++){
+    //             // RACHAEL INSERT FUNCTION HERE
+    //             renderResults(events[i]);
+    //             console.log(events[i])
+    
+    //         }
+    
+    //     });
+    // }
 
 
 });
