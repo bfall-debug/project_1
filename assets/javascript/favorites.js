@@ -44,6 +44,8 @@ function renderFavorites() {
         $(".row-2").append($favDiv);
     }
 
+    
+
 }
 
 renderFavorites();

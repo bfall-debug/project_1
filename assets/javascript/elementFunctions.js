@@ -5,7 +5,7 @@ function renderResults(event, index) {
 
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
-    $resultsUl.attr("data-id",event.id);
+    $resultsUl.attr("data-id", event.id);
 
     var $newDivRow = $("<div>");
     $newDivRow.addClass("row");
@@ -39,7 +39,7 @@ function renderResults(event, index) {
     $starIcon.addClass("material-icons");
     $starIcon.addClass("right");
     $starIcon.addClass("icon-teal");
-    $starIcon.attr("data-id",event.id)
+    $starIcon.attr("data-id", event.id)
 
 
     // Append elements
