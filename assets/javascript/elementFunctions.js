@@ -88,7 +88,7 @@ $(document).on("click", ".starIcon", function (event) {
     localStorage.setItem("favoritesArray", savedEvents);
 
     console.log(savedEvents);
-    
+
     } else {
         $(this).addClass("icon-teal");
         $(this).removeClass("icon-saved");

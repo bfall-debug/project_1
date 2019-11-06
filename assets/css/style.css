@@ -36,3 +36,7 @@ i.icon-saved {
     object-fit: cover;
 }
 
+.name {
+    font-size: 30px;
+    padding-left: 100px;
+}

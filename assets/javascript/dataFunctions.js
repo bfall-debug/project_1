@@ -1,3 +1,6 @@
+// RANDOM BTN TO TEST RESULTS PAGE
+$("#submitBtn").on("click", function(event){
+  event.preventDefault();
 //=========== Get UserLocation ==========
     var UserLocation = {
         streetNum: "1",
@@ -39,48 +42,71 @@
             })
             
         });
-    } else {
+    } 
+    else {
         alert("Browser doesn't support geolocation!");
     }
 
-    // =============== Get Related Artists ==============
-function relatedArtists(artist) {
+    
+});
+function ticketmasterAPI(geoHash){
+    latlong = "40.36-70.67"
+    var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
+    var genre = "KnvZfZ7vAvv"
+    var radius = 100
+    var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&classificationId=${genre}&geoPoint=${geoHash}&radius=${radius}`
+    $.ajax({
+        url: url,
+        method: "GET",
+    }).then(function (a) {
+        
+       // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+        
+       var events = a._embedded.events;
+       console.log(events)
+       localStorage.setItem("allEvents", JSON.stringify(events));
+       $(".main-container").empty();
+       for(var i = 0; i < events.length; i++){
+           // RACHAEL INSERT FUNCTION HERE
+           renderResults(events[i],i);
+           console.log(events[i])
+       }
 
-    var artists = ["The Beatles", "Ariana Grande", "Blink 182", "Eminem"];
-
-    return artists;
+    });
 }
-
 //=========== Get Events ==========
   
-    function ticketmasterAPI(geoHash){
-        latlong = "40.36-70.67"
-        var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
-        var genre = "KnvZfZ7vAvv"
-        var radius = 100
-        var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&classificationId=${genre}&geoPoint=${geoHash}&radius=${radius}`
-        $.ajax({
-            url: url,
-            method: "GET",
-        }).then(function (a) {
+    
+
+
+    // function ticketmasterAPI(geoHash){
+    //     latlong = "40.36-70.67"
+    //     var apiKey = "c5IiGTZWs4t9H3rW0Nx4pFCbT5Koq6NK";
+    //     var genre = "KnvZfZ7vAvv"
+    //     var radius = 100
+    //     var url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&id=Z7r9jZ1Aeqf7x`
+    //     $.ajax({
+    //         url: url,
+    //         method: "GET",
+    //     }).then(function (a) {
             
-           // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
+    //        // FUNCTION DECLARATIONS THAT NEED TO USE USERLOCATION
             
-            var events = a._embedded.events;
-            console.log(events)
-            localStorage.setItem("allEvents", JSON.stringify(events));
-            $(".main-container").empty();
-            for(var i = 0; i < events.length; i++){
-                // RACHAEL INSERT FUNCTION HERE
-                renderResults(events[i],i);
-                console.log(events[i])
+            
 
-        
-            }
 
-        });
-    }
-
+    //         var events = a._embedded.events;
+    //         console.log(events)
+    //         $(".main-container").empty();
+    //         for(i = 0; i < events.length; i++){
+    //             // RACHAEL INSERT FUNCTION HERE
+    //             renderResults(events[i]);
+    //             console.log(events[i])
+    
+    //         }
+    
+    //     });
+    // }
 
 
 
