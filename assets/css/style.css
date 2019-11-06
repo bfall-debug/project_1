@@ -22,10 +22,19 @@ i.icon-teal {
 i.icon-saved {
     color: #FFD180;
 }
+
 .brand-logo {
     width: 70px;
     height: 70x;
     margin-bottom: 10px;
+}
+
+.pointer-hover {
+    cursor: pointer;
+}
+
+.cover {
+    object-fit: cover;
 }
 
 .name {

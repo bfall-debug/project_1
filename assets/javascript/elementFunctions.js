@@ -1,11 +1,5 @@
-// create an object to save the info about each show
-var showInfo = {
-    bandName: "Band Name",
-    showDate: "Show Date",
-    venue: "Venue"
-}
 
-function renderResults(event) {
+function renderResults(event, index) {
     // clear the page content and keep the navbar
     // $(".main-container").empty();
 
@@ -14,6 +8,7 @@ function renderResults(event) {
 
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
+    $resultsUl.attr("data-id",event.id);
 
     var $newDivRow = $("<div>");
     $newDivRow.addClass("row");
@@ -25,7 +20,9 @@ function renderResults(event) {
 
     var $resultsBandImage = $("<img>");
     $resultsBandImage.addClass("circle");
-    $resultsBandImage.attr("src", "bandlights.jpg");
+    $resultsBandImage.addClass("cover");
+    // need to add this in the ajax call .then?
+    $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
@@ -40,10 +37,12 @@ function renderResults(event) {
 
     var $starIcon = $("<i>grade</i>");
     $starIcon.addClass("starIcon");
+    $starIcon.addClass("pointer-hover");
     $starIcon.addClass("col s1");
     $starIcon.addClass("material-icons");
     $starIcon.addClass("right");
     $starIcon.addClass("icon-teal");
+    $starIcon.attr("data-id",event.id)
 
 
     // Append elements
@@ -62,19 +61,38 @@ function renderResults(event) {
     return $resultsUl;
 }
 
+// I want to save the showInfo for events[i]..
+var savedEvents = [];
 
 // Click event for the star icon to save show info
 $(document).on("click", ".starIcon", function (event) {
+    event.preventDefault();
     if ($(this).hasClass("icon-teal")){
     $(this).removeClass("icon-teal");
     $(this).addClass("icon-saved");
-    localStorage.setItem("showInfo", JSON.stringify(showInfo));
+    
+    var eventId = $(this).attr("data-id");
+    localStorage.setItem("data-id", eventId);
+
+    var savedEvent = localStorage.getItem("data-id");
+    savedEvents.push(savedEvent);
+    localStorage.setItem("favoritesArray", savedEvents);
+
+    console.log(savedEvents);
+
     } else {
         $(this).addClass("icon-teal");
         $(this).removeClass("icon-saved");
-        localStorage.removeItem("showInfo");
+        // localStorage.removeItem("data-id");
+        savedEvents.pop(savedEvent);
+        console.log(savedEvents);
+        localStorage.setItem("favoritesArray", savedEvents);
+
     }
 });
+
+
+
 
 
 
