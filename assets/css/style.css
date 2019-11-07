@@ -62,3 +62,12 @@ body {
     height: 210px;
 }
 
+ a {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
+ }
+
+ /* label {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
+ } */
