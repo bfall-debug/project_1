@@ -15,7 +15,7 @@ for (var k = 0; k < objectOfEvents.length; k++){
 function renderFavorites(event) {
     //  ========== Create Favorites Card Elements ============
     var $favDiv = $("<div>");
-    $favDiv.addClass("col s12 m6");
+    $favDiv.addClass("col s12 m2");
 
     var $favCard = $("<div>");
     $favCard.addClass("card");

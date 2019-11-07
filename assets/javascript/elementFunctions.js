@@ -7,23 +7,27 @@ function renderResults(event, index) {
     $resultsUl.addClass("collection");
 
     var $newDivRow = $("<div>");
-    $newDivRow.addClass("row");
+    $newDivRow.addClass("row eventRow");
 
     var $resultsLi = $("<li>");
     $resultsLi.addClass("valign-wrapper");
     $resultsLi.addClass("collection-item");
     $resultsLi.addClass("avatar");
+    $resultsLi.addClass("eventContainer");
 
     var $resultsBandImage = $("<img>");
     // $resultsBandImage.addClass("circle");
     $resultsBandImage.addClass("cover");
     $resultsBandImage.addClass("eventImage")
     $resultsBandImage.attr("src", event.images[0].url);
+    $resultsBandImage.attr("data-name",event._embedded.attractions[0].name)
+    $resultsBandImage.attr("music-state","pause");
 
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
 
     var $bandName = $("<p>").text(event.name);
+    $bandName.addClass("eventName")
     var $dateP = $("<p>").text(event.dates.start.localDate);
     var $venueP = $("<p>").text(event._embedded.venues[0].name);
 

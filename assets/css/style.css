@@ -43,12 +43,10 @@ i.icon-saved {
 }
 
 .eventImage{
-    width: 50px;
+    width: 84px;
+    height: 84px;
 }
 
-/* .eventRow{
-
-} */
 .left {
     margin-top: 75px;
 }
@@ -61,6 +59,38 @@ body {
     object-fit: cover;
     height: 210px;
 }
+.eventRow{
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.eventContainer{
+    padding-left: 0px;
+}
+.collection .collection-item.avatar{
+    padding-left: 0px;
+    padding: 0px;
+}
+.material-icons{
+    font-size: 50px;
+}
+
+.row .col.s1{
+    width: 10.33%;
+}
+
+.eventName{
+    font-family: 'Times New Roman', Times, serif;;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+.dropdown-content li>span{
+    padding-top: 4px;
+    padding-right: 14px;
+    padding-bottom: 4px;
+    padding-left: 14px;
+}
 
  a {
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -71,3 +101,6 @@ body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 30px;
  } */
+.dropdown-content li{
+    min-height: 25px;
+}

@@ -12,6 +12,7 @@ $(document).ready(function(){
   for(var i = 0; i < genres.length; i++) {
       var opt = $('<option>');
       opt.text(genres[i][0]);
+      // console.log(opt.child())
       sel.append(opt);
   }
 
