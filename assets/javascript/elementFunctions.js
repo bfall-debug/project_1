@@ -5,7 +5,6 @@ function renderResults(event, index) {
 
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
-    $resultsUl.attr("data-id",event.id);
 
     var $newDivRow = $("<div>");
     $newDivRow.addClass("row");
@@ -16,8 +15,9 @@ function renderResults(event, index) {
     $resultsLi.addClass("avatar");
 
     var $resultsBandImage = $("<img>");
-    $resultsBandImage.addClass("circle");
+    // $resultsBandImage.addClass("circle");
     $resultsBandImage.addClass("cover");
+    $resultsBandImage.addClass("eventImage")
     $resultsBandImage.attr("src", event.images[0].url);
 
     var $resultsDiv = $("<div>");
@@ -37,8 +37,23 @@ function renderResults(event, index) {
     $starIcon.addClass("col s1");
     $starIcon.addClass("material-icons");
     $starIcon.addClass("right");
-    $starIcon.addClass("icon-teal");
-    $starIcon.attr("data-id",event.id)
+
+    
+    
+    $starIcon.attr("data-id", event.id)
+
+    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    if (savedEvents === null){
+        savedEvents = [];
+    }
+
+    var index = savedEvents.indexOf(event.id);
+        if(index > -1){
+            $starIcon.addClass("icon-saved");
+        }
+        else{
+            $starIcon.addClass("icon-teal");
+        }
 
 
     // Append elements
@@ -63,31 +78,73 @@ var savedEvents = [];
 // Click event for the star icon to save show info
 $(document).on("click", ".starIcon", function (event) {
     event.preventDefault();
-    if ($(this).hasClass("icon-teal")){
-    $(this).removeClass("icon-teal");
-    $(this).addClass("icon-saved");
-    
+
     var eventId = $(this).attr("data-id");
-    localStorage.setItem("data-id", eventId);
+    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"));
+    // console.log(objectOfEvents)
+    if(objectOfEvents === null){
+        objectOfEvents = [];
+        savedEvents = [];
+    }
 
-    var savedEvent = localStorage.getItem("data-id");
-    savedEvents.push(savedEvent);
-    localStorage.setItem("favoritesArray", savedEvents);
 
-    console.log(savedEvents);
+    if ($(this).hasClass("icon-teal")){
 
-    } else {
+        $(this).removeClass("icon-teal");
+        $(this).addClass("icon-saved");
+        
+
+        savedEvents.push(eventId);
+        ticketmasterEvent(eventId);
+    } 
+    else {
         $(this).addClass("icon-teal");
         $(this).removeClass("icon-saved");
-        // localStorage.removeItem("data-id");
-        savedEvents.pop(savedEvent);
-        console.log(savedEvents);
-        localStorage.setItem("favoritesArray", savedEvents);
+
+        var index = savedEvents.indexOf(eventId);
+        if(index > -1) {
+            savedEvents.splice(index, 1)
+            console.log(objectOfEvents)
+            objectOfEvents.splice(index, 1)
+        }
 
     }
+
+    localStorage.setItem("favoritesArray", JSON.stringify(savedEvents));
+    localStorage.setItem("objectOfEvents", JSON.stringify(objectOfEvents));
 });
 
 
+
+function ticketmasterEvent(Id) {
+    var eventId = `&Id=${Id}`
+    var url = TmQuery + `${eventId}`
+    var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"))
+
+    if(objectOfEvents == null){
+        objectOfEvents = [];
+    }
+
+    $.ajax({
+        url: url,
+        method: "GET",
+    }).then(function (a) {
+        a = a._embedded.events[0];
+        eventInfo = {
+            name: a.name,
+            image: a.images[0].url,
+            ticket: a.url,
+            venue: a._embedded.venues[0].name,
+            date: a.dates.start.localDate,
+            id: Id
+        }
+        objectOfEvents.push(eventInfo);
+        localStorage.setItem("objectOfEvents",JSON.stringify(objectOfEvents))
+
+        // console.log(eventInfo)
+    });
+}
 
 
 

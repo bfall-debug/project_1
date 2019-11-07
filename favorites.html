@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Favorites</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
+
 <body>
-      <!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav class="teal">
-            <div class="nav-wrapper">
-                <img src="assets/images/Project1Logo.png" class="brand-logo"></img>
-                <a href="#!" class="sidenav-trigger" data-target="mobile-nav">
-                    <i class="material-icons">menu</i>
-                </a>
-                <span class="name"> SocialNite</span>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="favorites.html">Favorites</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <div class="row">
-                <div class="col s12 m12 center-align">
-                  <div class="card">
-                    <div class="card-image">
-                      <img class ="favorites-image" src="assets/images/Favorites image.jpeg">
-                      <span class="col s12 m12 card-title" style="top:25%;font-size:100px; color: white; font-weight: bold; text-shadow: 2px 2px black; ">Favorites</span>
-                    </div>
+        <div class="nav-wrapper">
+            <img src="assets/images/Project1Logo.png" class="brand-logo"></img>
+            <a href="#!" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+            <span class="name">SocialNite</span>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+    </ul>
+
+    <div class="row">
+        <div class="col s12 m12 center-align">
+            <div class="card">
+                <div class="card-image">
+                    <img class="favorites-image" src="assets/images/Favorites image.jpeg">
+                    <span class="col s12 m12 card-title"
+                        style="top:25%;font-size:100px; color: white; font-weight: bold; text-shadow: 2px 2px black; ">Favorites</span>
                 </div>
             </div>
+        </div>
 
-            <div class="row-2"></div>
+        <div class="row-2">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="assets/javascript/dataFunctions.js"></script>
+        <script src="assets/javascript/elementFunctions.js"></script>
+        <script src="assets/javascript/favorites.js"></script>
 </body>
+
 </html>

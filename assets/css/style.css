@@ -42,6 +42,13 @@ i.icon-saved {
     padding-left: 100px;
 }
 
+.eventImage{
+    width: 50px;
+}
+
+/* .eventRow{
+
+} */
 .left {
     margin-top: 75px;
 }
