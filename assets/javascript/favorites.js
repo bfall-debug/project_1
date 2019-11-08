@@ -30,13 +30,7 @@ function renderFavorites(event) {
     $favCardSpan.addClass("card-title");
     $favCardSpan.text(event.name);
 
-    var $favCardActionBtn = $("<a><i class=material-icons>grade</i></a>");
-    $favCardActionBtn.addClass("btn-floating");
-    $favCardActionBtn.addClass("halfway-fab");
-    $favCardActionBtn.addClass("waves-effect");
-    $favCardActionBtn.addClass("waves-light");
-    $favCardActionBtn.addClass("grey lighten-1");
-
+    star = createStar(event.id);
 
     var $favCardContent = $("<div>");
     $favCardContent.addClass("card-content");
@@ -65,10 +59,15 @@ function renderFavorites(event) {
         $favCard.append($favCardSpan);
         $favCard.append($favCardContent);
         $favCardContent.append($favCardAction);
+        $favCardContent.append(star);
         $favCardAction.append($favCardLink);
-        $favCardContent.append($favCardActionBtn);
         $(".row-2").append($favDiv);
     // }
     
 }
+
+$(document).on("click", ".starIcon", function(){
+    $(this).parents().eq(2).remove();
+
+});
 

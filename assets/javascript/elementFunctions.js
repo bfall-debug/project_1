@@ -35,29 +35,7 @@ function renderResults(event, index) {
     $resultsAnchor.addClass("secondary-content");
     $resultsAnchor.attr("href", "#!");
 
-    var $starIcon = $("<i>grade</i>");
-    $starIcon.addClass("starIcon");
-    $starIcon.addClass("pointer-hover");
-    $starIcon.addClass("col s1");
-    $starIcon.addClass("material-icons");
-    $starIcon.addClass("right");
-
-    
-    
-    $starIcon.attr("data-id", event.id)
-
-    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-    if (savedEvents === null){
-        savedEvents = [];
-    }
-
-    var index = savedEvents.indexOf(event.id);
-        if(index > -1){
-            $starIcon.addClass("icon-saved");
-        }
-        else{
-            $starIcon.addClass("icon-teal");
-        }
+    star = createStar(event.id);
 
 
     // Append elements
@@ -69,7 +47,7 @@ function renderResults(event, index) {
     $resultsDiv.append($dateP);
     $resultsDiv.append($venueP);
     $resultsLi.append($resultsAnchor);
-    $resultsLi.append($starIcon);
+    $resultsLi.append(star);
     $(".main-container").append($resultsUl);
 
     //========= Return Completed Element ============
@@ -148,7 +126,39 @@ function ticketmasterEvent(Id) {
 
         // console.log(eventInfo)
     });
+
+    
 }
+
+function createStar(id){
+
+    var star = $("<i>grade</i>");
+    star.addClass("starIcon");
+    star.addClass("pointer-hover");
+    star.addClass("col s1");
+    star.addClass("material-icons");
+    star.addClass("right");
+
+    star.attr("data-id", id)
+
+    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+
+    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    if (savedEvents === null){
+        savedEvents = [];
+    }
+
+    var index = savedEvents.indexOf(id);
+        if(index > -1){
+            star.addClass("icon-saved");
+        }
+        else{
+            star.addClass("icon-teal");
+        }
+
+    return star;
+}
+
 
 
 
