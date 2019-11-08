@@ -93,14 +93,29 @@ body {
 }
 
  a {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Cuprum', sans-serif;
     font-size: 30px;
  }
 
- /* label {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+ label {
+    font-family: 'Cuprum', sans-serif;
     font-size: 30px;
- } */
+ }
 .dropdown-content li{
     min-height: 25px;
 }
+
+.card .card-title {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.card .card-image img {
+    margin-bottom: 10px;
+}
+
+.card-link {
+    font-size: 18px;
+}
+
+
