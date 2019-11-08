@@ -30,6 +30,14 @@ function renderFavorites(event) {
     $favCardSpan.addClass("card-title");
     $favCardSpan.text(event.name);
 
+    var $favCardActionBtn = $("<a><i class=material-icons>grade</i></a>");
+    $favCardActionBtn.addClass("btn-floating");
+    $favCardActionBtn.addClass("halfway-fab");
+    $favCardActionBtn.addClass("waves-effect");
+    $favCardActionBtn.addClass("waves-light");
+    $favCardActionBtn.addClass("grey lighten-1");
+
+
     var $favCardContent = $("<div>");
     $favCardContent.addClass("card-content");
 
@@ -37,8 +45,9 @@ function renderFavorites(event) {
     $favCardAction.addClass("card-action");
 
     var $favCardLink = $("<a>");
+    $favCardLink.addClass("card-link");
     $favCardLink.attr("href", event.ticket);
-    $favCardLink.text("Buy Tickets Here!")
+    $favCardLink.text("Buy Tickets Here!");
 
 
     //  ========== Append Favorites Card Elements ============
@@ -57,6 +66,7 @@ function renderFavorites(event) {
         $favCard.append($favCardContent);
         $favCardContent.append($favCardAction);
         $favCardAction.append($favCardLink);
+        $favCardContent.append($favCardActionBtn);
         $(".row-2").append($favDiv);
     // }
     
