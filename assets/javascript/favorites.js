@@ -10,8 +10,6 @@ for (var k = 0; k < objectOfEvents.length; k++){
 }
 
 
-
-
 function renderFavorites(event) {
     //  ========== Create Favorites Card Elements ============
     var $favDiv = $("<div>");
