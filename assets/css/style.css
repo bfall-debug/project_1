@@ -95,3 +95,7 @@ body {
 .dropdown-content li{
     min-height: 25px;
 }
+
+.input-field {
+    margin-bottom: 3%;
+}

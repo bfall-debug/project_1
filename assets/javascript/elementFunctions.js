@@ -35,7 +35,17 @@ function renderResults(event, index) {
     $resultsAnchor.addClass("secondary-content");
     $resultsAnchor.attr("href", "#!");
 
+<<<<<<< HEAD
+    var $starIcon = CreateStar(event.id);
+
+    
+    
+    
+
+   
+=======
     star = createStar(event.id);
+>>>>>>> 4012bfa09ca2db49358086d7f42852ed00ed4b53
 
 
     // Append elements
@@ -162,4 +172,29 @@ function createStar(id){
 
 
 
+function createStar(id){
+    
+    var star = $("<i>grade</i>");
+    star.addClass("starIcon");
+    star.addClass("pointer-hover");
+    star.addClass("col s1");
+    star.addClass("material-icons");
+    star.addClass("right");
 
+    star.attr("data-id", id)
+
+    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
+    if (savedEvents === null){
+        savedEvents = [];
+    }
+
+    var index = savedEvents.indexOf(id);
+        if(index > -1){
+            star.addClass("icon-saved");
+        }
+        else{
+            star.addClass("icon-teal");
+        }
+
+    return star
+}
