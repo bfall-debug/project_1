@@ -38,7 +38,7 @@ function renderFavorites(event) {
     var $favCardAction = $("<div>");
     $favCardAction.addClass("card-action");
 
-    var $favCardLink = $("<a>");
+    var $favCardLink = $("<a>"); 
     $favCardLink.addClass("card-link");
     $favCardLink.attr("href", event.ticket);
     $favCardLink.text("Buy Tickets Here!");
