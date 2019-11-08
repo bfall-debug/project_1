@@ -29,7 +29,9 @@ function renderResults(event, index) {
     var $bandName = $("<p>").text(event.name);
     $bandName.addClass("eventName")
     var $dateP = $("<p>").text(event.dates.start.localDate);
+    $dateP.addClass("center-align");
     var $venueP = $("<p>").text(event._embedded.venues[0].name);
+    $venueP.addClass("center-align");
 
     var $resultsAnchor = $("<a>");
     $resultsAnchor.addClass("secondary-content");
