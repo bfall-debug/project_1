@@ -35,17 +35,7 @@ function renderResults(event, index) {
     $resultsAnchor.addClass("secondary-content");
     $resultsAnchor.attr("href", "#!");
 
-<<<<<<< HEAD
-    var $starIcon = CreateStar(event.id);
-
-    
-    
-    
-
-   
-=======
     star = createStar(event.id);
->>>>>>> 4012bfa09ca2db49358086d7f42852ed00ed4b53
 
 
     // Append elements
