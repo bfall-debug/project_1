@@ -28,6 +28,7 @@ function renderFavorites(event) {
 
     var $favCardSpan = $("<span>");
     $favCardSpan.addClass("card-title");
+    $favCardSpan.addClass("")
     $favCardSpan.text(event.name);
 
     star = createStar(event.id);
