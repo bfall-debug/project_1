@@ -133,38 +133,6 @@ function ticketmasterEvent(Id) {
 }
 
 function createStar(id){
-
-    var star = $("<i>grade</i>");
-    star.addClass("starIcon");
-    star.addClass("pointer-hover");
-    star.addClass("col s1");
-    star.addClass("material-icons");
-    star.addClass("right");
-
-    star.attr("data-id", id)
-
-    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-
-    var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-    if (savedEvents === null){
-        savedEvents = [];
-    }
-
-    var index = savedEvents.indexOf(id);
-        if(index > -1){
-            star.addClass("icon-saved");
-        }
-        else{
-            star.addClass("icon-teal");
-        }
-
-    return star;
-}
-
-
-
-
-function createStar(id){
     
     var star = $("<i>grade</i>");
     star.addClass("starIcon");
