@@ -48,26 +48,25 @@
             </div>
             <div class="container center">
                 <form>
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6">
                         <select class="genre-dropdown">
                             <option value="" disabled selected>Select an option</option>
                         </select>
                         <label>Choose by Genre</label>
                     </div>
-                    <div class="input-field col s12">
-                        <select enabled="disabled" class="location-dropdown">
+                    <div class="input-field col s12 m6">
+                        <select enabled="disabled" class="size-dropdown">
                             <option value="" disabled selected>Select an option</option>
                         </select>
-                        <label>Choose by City/State</label>
+                        <label>Number of Results</label>
                     </div>
-                    <div>
-                        <p class="left">
-                            <label>
-                                <input type="checkbox" class="filled-in location-check" checked="checked" />
-                                <span>Find shows using my location</span>
-                            </label>
-                        </p>
+                    <div class="input-field col s12 m6">
+                        <select enabled="disabled" class="radius-dropdown">
+                            <option value="" disabled selected>Select an option</option>
+                        </select>
+                        <label>Search Radius</label>
                     </div>
+                    
                     <br>
                     <button class="btn waves-effect waves-light left" type="submit" name="action" id="submitBtn">Find
                         Shows
@@ -80,9 +79,9 @@
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
     <!-- <script src="assets/javascript/spotify.js"></script> -->
     <script src="assets/javascript/variables.js"></script>
     <script src="assets/javascript/geoHash.js"></script>
