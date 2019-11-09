@@ -165,18 +165,39 @@ function createStar(id) {
 
 
 }
-    function createDropDown(id) {
+    function createDropDown(id, arrayVar) {
         var $idDropDown = $("<div>");
-        $idDropDown.addClass("input-field col s12 m4");
-        $idDropDown.css({ "background": "grey" });
+        $idDropDown.addClass("input-field col s12 m3");
         var $select = $("<select>")
-        $select.addClass(`${id}-dropdown`)
-        var $option = $("<option value='' disabled selected>Select an option</option>")
+        $select.attr("id",`${id}-dropdown`)
+        $select.addClass("dropdown")
+        var $option = $("<option disabled selected>Select an option</option>")
+        $option.attr("value", "")
         var $label = $(`<label>Choose by ${id}</label>`)
 
+        
         $idDropDown.append($select, $label)
         $select.append($option)
-
-        $("#dropdown-container").append($idDropDown);
+        $("#newForm").append($idDropDown);
        
+        
+
+
+        var variableDropDown = $(`#${id}-dropdown`);
+        for (var i = 0; i < arrayVar.length; i++) {
+            var opt = $('<option>');
+            if(id == "genre"){
+             opt.text(arrayVar[i][0]);
+            }
+            else{
+                opt.text(arrayVar[i]);
+            }
+            variableDropDown.append(opt);
+        }
+
+
+        retrievedChoice = JSON.parse(localStorage.getItem(`${id}-dropdown`));
+      
+       $(`#${id}-dropdown`).val(retrievedChoice)
+       $("select").formSelect();
     }

@@ -47,9 +47,9 @@ var genreDropDown = $('#genre-dropdown');
   }
 
 
-
-$(".dropdown").change(function (hello) {
-  var targetId = hello.target.id;
-  var targetValue = hello.target.value;
+$(document).on("change",".dropdown",function(selectedOption){
+// $(".dropdown").change(function (selectedOption) {
+  var targetId = selectedOption.target.id;
+  var targetValue = selectedOption.target.value;
   localStorage.setItem(targetId, JSON.stringify(targetValue))
 })
