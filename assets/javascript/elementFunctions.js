@@ -94,7 +94,7 @@ $(document).on("click", ".starIcon", function (event) {
         var index = savedEvents.indexOf(eventId);
         if (index > -1) {
             savedEvents.splice(index, 1)
-            console.log(objectOfEvents)
+            // console.log(objectOfEvents)
             objectOfEvents.splice(index, 1)
         }
 

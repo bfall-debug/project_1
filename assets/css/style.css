@@ -122,3 +122,12 @@ body {
 .input-field {
     margin-bottom: 3%;
 }
+
+.row {
+    margin-bottom: 0px;
+}
+
+.card .card-action {
+padding: 0px;
+padding-top: 10px;
+}

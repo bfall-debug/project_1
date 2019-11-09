@@ -1,11 +1,18 @@
 var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-console.log("saved events: ", savedEvents)
+// console.log("saved events: ", savedEvents)
 
 
 // loop through the saved object to populate the cards
 var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"));
-
-for (var k = 0; k < objectOfEvents.length; k++){
+$(".row").attr("id", "newRow")
+for (var k = 0; k < objectOfEvents.length; k++) {
+    if ((k) % 6 === 0) {
+        $("#newRow").attr("id", "oldRow");
+        var newRow = $("<div>");
+        newRow.addClass("row")
+        newRow.attr("id", "newRow");
+        $("body").append(newRow)
+    }
     renderFavorites(objectOfEvents[k]);
 }
 
@@ -36,7 +43,7 @@ function renderFavorites(event) {
     var $favCardAction = $("<div>");
     $favCardAction.addClass("card-action");
 
-    var $favCardLink = $("<a>"); 
+    var $favCardLink = $("<a>");
     $favCardLink.addClass("card-link");
     $favCardLink.attr("href", event.ticket);
     $favCardLink.text("Buy Tickets Here!");
@@ -44,27 +51,27 @@ function renderFavorites(event) {
 
     //  ========== Append Favorites Card Elements ============
     var favoritesString = localStorage.getItem("favoritesArray");
-    console.log("favoriteString", favoritesString);
+    // console.log("favoriteString", favoritesString);
 
     var favsArray = JSON.parse(favoritesString);
 
-    console.log(favsArray);
+    // console.log(favsArray);
 
     // if (savedEvents.length > 0) {
-        $favDiv.append($favCard);
-        $favCard.append($favCardImgDiv);
-        $favCardImgDiv.append($favCardImg);
-        $favCard.append($favCardSpan);
-        $favCard.append($favCardContent);
-        $favCardContent.append($favCardAction);
-        $favCardContent.append(star);
-        $favCardAction.append($favCardLink);
-        $(".row-2").append($favDiv);
+    $favDiv.append($favCard);
+    $favCard.append($favCardImgDiv);
+    $favCardImgDiv.append($favCardImg);
+    $favCard.append($favCardSpan);
+    $favCard.append($favCardContent);
+    $favCardContent.append($favCardAction);
+    $favCardContent.append(star);
+    $favCardAction.append($favCardLink);
+    $("#newRow").append($favDiv);
     // }
-    
+
 }
 
-$(document).on("click", ".starIcon", function(){
+$(document).on("click", ".starIcon", function () {
     $(this).parents().eq(2).remove();
 
 });
