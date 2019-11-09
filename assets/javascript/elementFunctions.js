@@ -3,10 +3,10 @@ function renderResults(event, index) {
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
 
-  
 
 
-    
+
+
 
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
@@ -25,8 +25,8 @@ function renderResults(event, index) {
     $resultsBandImage.addClass("cover");
     $resultsBandImage.addClass("eventImage")
     $resultsBandImage.attr("src", event.images[0].url);
-    $resultsBandImage.attr("data-name",event._embedded.attractions[0].name)
-    $resultsBandImage.attr("music-state","pause");
+    $resultsBandImage.attr("data-name", event._embedded.attractions[0].name)
+    $resultsBandImage.attr("music-state", "pause");
 
     var $resultsDiv = $("<div>");
     $resultsDiv.addClass("col s10");
@@ -72,27 +72,27 @@ $(document).on("click", ".starIcon", function (event) {
     var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
     var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"));
     // console.log(objectOfEvents)
-    if(objectOfEvents === null){
+    if (objectOfEvents === null) {
         objectOfEvents = [];
         savedEvents = [];
     }
 
 
-    if ($(this).hasClass("icon-teal")){
+    if ($(this).hasClass("icon-teal")) {
 
         $(this).removeClass("icon-teal");
         $(this).addClass("icon-saved");
-        
+
 
         savedEvents.push(eventId);
         ticketmasterEvent(eventId);
-    } 
+    }
     else {
         $(this).addClass("icon-teal");
         $(this).removeClass("icon-saved");
 
         var index = savedEvents.indexOf(eventId);
-        if(index > -1) {
+        if (index > -1) {
             savedEvents.splice(index, 1)
             console.log(objectOfEvents)
             objectOfEvents.splice(index, 1)
@@ -111,7 +111,7 @@ function ticketmasterEvent(Id) {
     var url = TmQuery + `${eventId}`
     var objectOfEvents = JSON.parse(localStorage.getItem("objectOfEvents"))
 
-    if(objectOfEvents == null){
+    if (objectOfEvents == null) {
         objectOfEvents = [];
     }
 
@@ -129,16 +129,16 @@ function ticketmasterEvent(Id) {
             id: Id
         }
         objectOfEvents.push(eventInfo);
-        localStorage.setItem("objectOfEvents",JSON.stringify(objectOfEvents))
+        localStorage.setItem("objectOfEvents", JSON.stringify(objectOfEvents))
 
         // console.log(eventInfo)
     });
 
-    
+
 }
 
-function createStar(id){
-    
+function createStar(id) {
+
     var star = $("<i>grade</i>");
     star.addClass("starIcon");
     star.addClass("pointer-hover");
@@ -149,34 +149,34 @@ function createStar(id){
     star.attr("data-id", id)
 
     var savedEvents = JSON.parse(localStorage.getItem("favoritesArray"));
-    if (savedEvents === null){
+    if (savedEvents === null) {
         savedEvents = [];
     }
 
-<<<<<<< HEAD
-function createDropDown(id){
-    var $idDropDown = $("<div>");
-    $idDropDown.addClass("input-field col s12 m4");
-    $idDropDown.css({"background": "grey"});
-    var $select = $("<select>")
-    $select.addClass(`${id}-dropdown`)
-    var $option = $("<option value='' disabled selected>Select an option</option>")
-    var $label = $(`<label>Choose by ${id}</label>`)
-    // $label.css({"border": "1px solid grey"});
-
-    $idDropDown.append($select, $label)
-    $select.append($option)
-
-    $("#dropdown-container").append($idDropDown);
-=======
     var index = savedEvents.indexOf(id);
-        if(index > -1){
-            star.addClass("icon-saved");
-        }
-        else{
-            star.addClass("icon-teal");
-        }
+    if (index > -1) {
+        star.addClass("icon-saved");
+    }
+    else {
+        star.addClass("icon-teal");
+    }
 
     return star
->>>>>>> 46dc1bd339733d418040a538cf016b3daebaa57f
+
+
 }
+    function createDropDown(id) {
+        var $idDropDown = $("<div>");
+        $idDropDown.addClass("input-field col s12 m4");
+        $idDropDown.css({ "background": "grey" });
+        var $select = $("<select>")
+        $select.addClass(`${id}-dropdown`)
+        var $option = $("<option value='' disabled selected>Select an option</option>")
+        var $label = $(`<label>Choose by ${id}</label>`)
+
+        $idDropDown.append($select, $label)
+        $select.append($option)
+
+        $("#dropdown-container").append($idDropDown);
+       
+    }
