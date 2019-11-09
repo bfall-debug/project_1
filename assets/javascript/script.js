@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   $('.sidenav').sidenav();
   $('select').formSelect();
-  mainImage.delay(1500).animate({ height: "275px", width: "100%", overflow: "hidden" }, 3000)
+  mainImage.delay(2500).animate({ height: "275px", width: "100%", overflow: "hidden" }, 3000)
 
 
 });
