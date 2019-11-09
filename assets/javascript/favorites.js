@@ -10,8 +10,6 @@ for (var k = 0; k < objectOfEvents.length; k++){
 }
 
 
-
-
 function renderFavorites(event) {
     //  ========== Create Favorites Card Elements ============
     var $favDiv = $("<div>");
@@ -30,15 +28,18 @@ function renderFavorites(event) {
     $favCardSpan.addClass("card-title");
     $favCardSpan.text(event.name);
 
+    star = createStar(event.id);
+
     var $favCardContent = $("<div>");
     $favCardContent.addClass("card-content");
 
     var $favCardAction = $("<div>");
     $favCardAction.addClass("card-action");
 
-    var $favCardLink = $("<a>");
+    var $favCardLink = $("<a>"); 
+    $favCardLink.addClass("card-link");
     $favCardLink.attr("href", event.ticket);
-    $favCardLink.text("Buy Tickets Here!")
+    $favCardLink.text("Buy Tickets Here!");
 
 
     //  ========== Append Favorites Card Elements ============
@@ -56,9 +57,15 @@ function renderFavorites(event) {
         $favCard.append($favCardSpan);
         $favCard.append($favCardContent);
         $favCardContent.append($favCardAction);
+        $favCardContent.append(star);
         $favCardAction.append($favCardLink);
         $(".row-2").append($favDiv);
     // }
     
 }
+
+$(document).on("click", ".starIcon", function(){
+    $(this).parents().eq(2).remove();
+
+});
 
