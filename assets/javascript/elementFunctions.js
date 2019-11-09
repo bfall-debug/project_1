@@ -3,6 +3,11 @@ function renderResults(event, index) {
     // ========= Construction =========
     // Create all elements of the the avatar content for the results page
 
+  
+
+
+    
+
     var $resultsUl = $("<ul>");
     $resultsUl.addClass("collection");
 
@@ -152,4 +157,18 @@ function ticketmasterEvent(Id) {
 
 
 
+function createDropDown(id){
+    var $idDropDown = $("<div>");
+    $idDropDown.addClass("input-field col s12 m4");
+    $idDropDown.css({"background": "grey"});
+    var $select = $("<select>")
+    $select.addClass(`${id}-dropdown`)
+    var $option = $("<option value='' disabled selected>Select an option</option>")
+    var $label = $(`<label>Choose by ${id}</label>`)
+    // $label.css({"border": "1px solid grey"});
 
+    $idDropDown.append($select, $label)
+    $select.append($option)
+
+    $("#dropdown-container").append($idDropDown);
+}
