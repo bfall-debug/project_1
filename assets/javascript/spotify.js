@@ -4,7 +4,7 @@
 // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/#
 
 
-let _token = 'BQD3nDByJ6YwOIUUSBrGQ-Z4xp0V5g3moQRfgk86OVpNSxihvbKbPfYntqYNPQW_Vla9WJuiZzYRxXdXPpupwKYQpvZAZZaBRpiIr7FKTHm9OMburUUXmXD0KEM77YH2KG_LHAJo6y0n6fTekCUqypEfhQDJjM3HyKR38I0';
+let _token = 'BQDOn6iGKcR4wNWONSW6iJhxX7LwV_GP69lvyhmYpBozqQG2luENccrMznz2UEp55hqXaqPbnz-0_9YXRQLgTdltdyZUWtvXxGL0G5KfHn22EM11ixVlQ8-UAped7A7wbAIqCHip2ppq166uunuqfV58I1R4-wi4AkKKYc8';
 
 window.onSpotifyPlayerAPIReady = () => {
     const player = new Spotify.Player({
