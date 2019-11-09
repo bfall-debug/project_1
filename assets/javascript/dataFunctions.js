@@ -30,6 +30,12 @@ function ticketmasterAPI(url){
 
         localStorage.setItem("allEvents", JSON.stringify(events));
         $(".main-container").empty();
+        var $container = $("<div id='dropdown-container' class='row'>")
+        $(".main-container").append($container)
+        createDropDown("genre");
+        createDropDown("size");
+        createDropDown("radius");
+
         for(var i = 0; i < events.length; i++){
             renderResults(events[i],i);
         }
