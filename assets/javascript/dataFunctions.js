@@ -9,11 +9,12 @@ $("#submitBtn").on("click", function(event){
   geoHash = Geohash.encode(position.coords.latitude,position.coords.longitude,4)
 
   var geoHash = `&geoPoint=${geoHash}`
-  var radius = `&radius=${$(".radius-dropdown")[0].value}`
+  var radius = `&radius=${$("#radius-dropdown").val()}`
   var genre = `&classificationId=${getGenre()}`
-  var size = `&size=${$(".size-dropdown")[0].value}`
+  var size = `&size=${$("#size-dropdown").val()}`
   var type = "&classificationName=music";
   var url = TmQuery + `${genre}${geoHash}${radius}${type}${size}`
+  console.log(url)
   ticketmasterAPI(url);    
   });
     
@@ -24,6 +25,7 @@ function ticketmasterAPI(url){
         url: url,
         method: "GET",
     }).then(function (a) {
+      console.log(a)
         var events = a._embedded.events
 
         localStorage.setItem("allEvents", JSON.stringify(events));
@@ -36,9 +38,10 @@ function ticketmasterAPI(url){
 }
 
 function getGenre(){
-    var selectedGenre = $(".genre-dropdown")[0].value
+    var selectedGenre2 = $("#genre-dropdown")
     for(var i = 0; i < genres.length; i++){
-      if(selectedGenre == genres[i][0]){
+      
+      if(selectedGenre2.val() == genres[i][0]){
         var genreId = genres[i][1];
       }
     }
